@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Academic Outreach — Research Portfolio</title>
+<style>
+:root{--bg:#f6f7f9;--panel:#fff;--text:#18202a;--muted:#697586;--line:#e6e9ee;--accent:#315efb;--accent2:#edf2ff;--green:#16835b;--yellow:#a86b00;--red:#b54747;--shadow:0 8px 30px rgba(20,30,50,.06)}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text)}
+button,input,textarea,select{font:inherit}button{cursor:pointer}.app{display:flex;min-height:100vh}.sidebar{width:245px;background:#fff;border-right:1px solid var(--line);padding:24px 16px;position:fixed;inset:0 auto 0 0}.brand{font-weight:750;font-size:18px;padding:8px 10px 26px}.brand small{display:block;font-size:11px;color:var(--muted);font-weight:500;margin-top:5px}.nav{display:grid;gap:4px}.nav button{border:0;background:transparent;text-align:left;padding:11px 12px;border-radius:9px;color:#566170}.nav button.active,.nav button:hover{background:#f0f3f8;color:var(--text)}.nav button.active{font-weight:650}.side-note{position:absolute;left:22px;right:22px;bottom:24px;color:var(--muted);font-size:11px;line-height:1.6}
+.main{margin-left:245px;width:calc(100% - 245px);padding:28px 34px 60px}.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:26px}.topbar h1{font-size:25px;margin:0}.topbar p{margin:5px 0 0;color:var(--muted);font-size:13px}.actions{display:flex;gap:9px}.btn{border:1px solid var(--line);background:#fff;border-radius:8px;padding:9px 13px;color:#46505d}.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}.btn.ghost{background:transparent}.btn.danger{color:var(--red)}.view{display:none}.view.active{display:block}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:24px}.stat{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:18px;box-shadow:var(--shadow)}.stat .num{font-size:27px;font-weight:750}.stat .label{font-size:12px;color:var(--muted);margin-top:6px}.grid{display:grid;grid-template-columns:1.25fr .75fr;gap:18px}.panel{background:#fff;border:1px solid var(--line);border-radius:13px;box-shadow:var(--shadow);padding:20px}.panel h2{font-size:15px;margin:0 0 16px}.prof-list{display:grid;gap:10px}.prof-card{border:1px solid var(--line);border-radius:10px;padding:14px;display:flex;justify-content:space-between;gap:15px;align-items:center}.prof-main{min-width:0}.prof-name{font-weight:700}.prof-meta{color:var(--muted);font-size:12px;margin-top:4px}.tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:8px}.tag{font-size:10px;padding:4px 7px;border-radius:999px;background:#f2f4f7;color:#5b6573}.status{font-size:11px;padding:5px 8px;border-radius:999px;white-space:nowrap}.status.preparing{background:#fff5df;color:var(--yellow)}.status.contacted{background:#edf2ff;color:#3154ba}.status.replied{background:#e8f7f0;color:var(--green)}.status.meeting{background:#eee9ff;color:#6941c6}.status.rejected{background:#fceceb;color:var(--red)}
+.form{display:grid;gap:13px}.field label{display:block;font-size:12px;font-weight:650;margin-bottom:6px}.field input,.field textarea,.field select{width:100%;border:1px solid var(--line);border-radius:8px;padding:10px 11px;background:#fff;outline:none}.field textarea{min-height:100px;resize:vertical}.field input:focus,.field textarea:focus,.field select:focus{border-color:#9eb1ff;box-shadow:0 0 0 3px #edf2ff}.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}.search{width:100%;max-width:330px}.empty{padding:30px;text-align:center;color:var(--muted);font-size:13px}.editor-layout{display:grid;grid-template-columns:320px 1fr;gap:18px}.prof-select{display:grid;gap:8px}.select-item{padding:12px;border:1px solid var(--line);border-radius:9px;background:#fff;text-align:left}.select-item.selected{border-color:#9eb1ff;background:#f4f6ff}.select-item strong{display:block}.select-item small{color:var(--muted)}.editor{background:#fff;border:1px solid var(--line);border-radius:13px;box-shadow:var(--shadow);padding:20px}.editor textarea{min-height:390px;font-size:14px;line-height:1.75}.version-list{display:grid;gap:8px;margin-top:12px}.version{border:1px solid var(--line);border-radius:8px;padding:10px;font-size:12px}.version button{float:right;border:0;background:transparent;color:var(--accent)}.public{max-width:1050px;margin:auto}.public-head{padding:30px 0 25px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between}.public-title{font-size:30px;font-weight:780}.public-sub{color:var(--muted);margin-top:8px}.public-section{margin-top:30px}.public-section h2{font-size:17px}.public-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.public-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px}.public-card h3{margin:0;font-size:16px}.public-card p{font-size:13px;color:#596575;line-height:1.65}.footer{color:#8a94a3;font-size:11px;margin-top:35px;padding-top:18px;border-top:1px solid var(--line)}
+.notice{background:#f0f4ff;border:1px solid #dbe3ff;padding:12px;border-radius:9px;color:#40527e;font-size:12px;margin-bottom:15px}
+@media(max-width:900px){.sidebar{position:static;width:100%;height:auto;border-right:0;border-bottom:1px solid var(--line)}.app{display:block}.main{margin-left:0;width:100%;padding:20px}.side-note{display:none}.nav{grid-template-columns:repeat(4,1fr)}.nav button{font-size:11px;text-align:center}.stats,.grid,.editor-layout,.public-grid{grid-template-columns:1fr}.topbar{align-items:flex-start;gap:15px}.two{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+  <div class="brand">Academic Outreach<small>Research & Application Portfolio</small></div>
+  <div class="nav">
+    <button class="active" data-view="dashboard">◈ Dashboard</button>
+    <button data-view="professors">◎ 导师</button>
+    <button data-view="emails">✉ 套磁信</button>
+    <button data-view="public">↗ 对外展示</button>
+  </div>
+  <div class="side-note">本地保存 · 无需服务器<br>适合持续维护申请材料</div>
+</aside>
+
+<main class="main">
+<section id="dashboard" class="view active">
+  <div class="topbar"><div><h1>Research & Academic Outreach</h1><p>科研申请与套磁管理中心</p></div><div class="actions"><button class="btn" onclick="showView('public')">预览公开页</button><button class="btn primary" onclick="showView('professors');openProfessorForm()">＋ 添加导师</button></div></div>
+  <div class="stats" id="stats"></div>
+  <div class="grid">
+    <div class="panel"><h2>近期导师</h2><div id="recentProfessors" class="prof-list"></div></div>
+    <div class="panel"><h2>本周待处理</h2><div id="todo"></div></div>
+  </div>
+</section>
+
+<section id="professors" class="view">
+  <div class="topbar"><div><h1>导师数据库</h1><p>记录目标导师、研究方向与申请状态</p></div><button class="btn primary" onclick="openProfessorForm()">＋ 添加导师</button></div>
+  <div class="panel">
+    <div class="toolbar"><input id="profSearch" class="field input search" placeholder="搜索姓名、学校、研究方向…" oninput="renderProfessors()"></div>
+    <div id="professorList" class="prof-list"></div>
+  </div>
+  <div id="profFormPanel" class="panel" style="margin-top:18px;display:none"></div>
+</section>
+
+<section id="emails" class="view">
+  <div class="topbar"><div><h1>套磁信编辑器</h1><p>持续修改、保存草稿，并保留版本记录</p></div></div>
+  <div class="notice">邮件只保存在当前浏览器。建议正式发送前自行检查教授姓名、论文标题、附件与联系方式。</div>
+  <div class="editor-layout">
+    <div class="panel"><h2>选择导师</h2><div id="emailProfList" class="prof-select"></div></div>
+    <div class="editor" id="emailEditor"></div>
+  </div>
+</section>
+
+<section id="public" class="view">
+  <div class="public">
+    <div class="topbar"><div><h1>公开展示</h1><p>适合直接给申请老师查看</p></div><button class="btn" onclick="showView('dashboard')">返回工作台</button></div>
+    <div id="publicContent"></div>
+  </div>
+</section>
+</main>
+</div>
+
+<script>
+const KEY='academic_outreach_v1';
+const defaultData={
+ profile:{name:'Cindy',title:'Research & Academic Outreach',interests:['Multimodal Learning','NLP','Unified Understanding & Generation','Generative Models','Representation Learning'],updated:new Date().toLocaleDateString('zh-CN')},
+ professors:[
+  {id:'p1',name:'Professor Example',school:'Example University',department:'Computer Science',areas:'Multimodal Learning, Generative Models',papers:'Paper Title A\\nPaper Title B',why:'该导师的研究与我目前关注的统一理解与生成、多模态建模方向存在较强关联。',status:'preparing',emailSubject:'Prospective Research Collaboration / Undergraduate Research Inquiry',emailBody:'Dear Professor Example,\\n\\nI am an undergraduate student interested in multimodal learning and generative models. I have been working on related research and would like to learn more about your recent work on multimodal modeling.\\n\\nI would be grateful for the opportunity to discuss whether there may be a suitable research opportunity in your group.\\n\\nBest regards,\\nCindy',versions:[]}
+ ],
+ lastUpdated:new Date().toLocaleString('zh-CN')
+};
+let data=JSON.parse(localStorage.getItem(KEY)||'null')||defaultData;
+let selectedEmailId=data.professors[0]?.id||null;
+
+function save(){data.lastUpdated=new Date().toLocaleString('zh-CN');localStorage.setItem(KEY,JSON.stringify(data));renderAll();}
+function showView(id){document.querySelectorAll('.view').forEach(x=>x.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.nav button').forEach(x=>x.classList.toggle('active',x.dataset.view===id));if(id==='public')renderPublic();if(id==='emails')renderEmails();if(id==='professors')renderProfessors();}
+document.querySelectorAll('.nav button').forEach(b=>b.onclick=()=>showView(b.dataset.view));
+
+function statusLabel(s){return {preparing:'准备中',contacted:'已发送',replied:'已回复',meeting:'Meeting',rejected:'暂不继续'}[s]||s}
+function profCard(p){return `<div class="prof-card"><div class="prof-main"><div class="prof-name">${esc(p.name)}</div><div class="prof-meta">${esc(p.school)} · ${esc(p.department)}</div><div class="tags">${p.areas.split(',').map(x=>`<span class="tag">${esc(x.trim())}</span>`).join('')}</div></div><div><span class="status ${p.status}">${statusLabel(p.status)}</span><br><button class="btn" style="margin-top:8px;padding:5px 8px;font-size:11px" onclick="editProfessor('${p.id}')">编辑</button></div></div>`}
+function renderStats(){let c={preparing:0,contacted:0,replied:0,meeting:0};data.professors.forEach(p=>c[p.status]=(c[p.status]||0)+1);document.getElementById('stats').innerHTML=[['目标导师',data.professors.length],['已发送',c.contacted],['已回复',c.replied],['Meeting',c.meeting]].map(x=>`<div class="stat"><div class="num">${x[1]}</div><div class="label">${x[0]}</div></div>`).join('')}
+function renderDashboard(){renderStats();document.getElementById('recentProfessors').innerHTML=data.professors.slice(0,6).map(profCard).join('')||'<div class="empty">还没有导师，先添加一个吧。</div>';document.getElementById('todo').innerHTML=data.professors.filter(p=>['preparing','contacted'].includes(p.status)).slice(0,7).map(p=>`<div style="padding:11px 0;border-bottom:1px solid var(--line);font-size:13px"><strong>${esc(p.name)}</strong><div style="color:var(--muted);font-size:11px;margin-top:3px">${statusLabel(p.status)} · ${esc(p.school)}</div></div>`).join('')||'<div class="empty">暂无待处理事项。</div>'}
+function renderProfessors(){let q=(document.getElementById('profSearch')?.value||'').toLowerCase();let arr=data.professors.filter(p=>(p.name+p.school+p.areas).toLowerCase().includes(q));document.getElementById('professorList').innerHTML=arr.map(profCard).join('')||'<div class="empty">没有匹配的导师。</div>'}
+function openProfessorForm(p){p=p||null;document.getElementById('profFormPanel').style.display='block';document.getElementById('profFormPanel').innerHTML=`<h2>${p?'编辑导师':'添加导师'}</h2><div class="form">
+<div class="two"><div class="field"><label>教授姓名</label><input id="fName" value="${esc(p?.name||'')}"></div><div class="field"><label>学校</label><input id="fSchool" value="${esc(p?.school||'')}"></div></div>
+<div class="two"><div class="field"><label>院系</label><input id="fDept" value="${esc(p?.department||'')}"></div><div class="field"><label>状态</label><select id="fStatus">${['preparing','contacted','replied','meeting','rejected'].map(s=>`<option value="${s}" ${p?.status===s?'selected':''}>${statusLabel(s)}</option>`).join('')}</select></div></div>
+<div class="field"><label>研究方向（用逗号分隔）</label><input id="fAreas" value="${esc(p?.areas||'')}"></div>
+<div class="field"><label>代表论文（每行一篇）</label><textarea id="fPapers">${esc(p?.papers||'')}</textarea></div>
+<div class="field"><label>为什么适合我 / 套磁切入点</label><textarea id="fWhy">${esc(p?.why||'')}</textarea></div>
+<div class="actions"><button class="btn primary" onclick="saveProfessor('${p?.id||''}')">保存</button><button class="btn" onclick="document.getElementById('profFormPanel').style.display='none'">取消</button>${p?`<button class="btn danger" onclick="deleteProfessor('${p.id}')">删除</button>`:''}</div></div>`}
+function saveProfessor(id){let p={id:id||'p'+Date.now(),name:v('fName'),school:v('fSchool'),department:v('fDept'),status:v('fStatus'),areas:v('fAreas'),papers:v('fPapers'),why:v('fWhy'),emailSubject:'',emailBody:'',versions:[]};let i=data.professors.findIndex(x=>x.id===id);if(i>=0){p.emailSubject=data.professors[i].emailSubject;p.emailBody=data.professors[i].emailBody;p.versions=data.professors[i].versions||[];data.professors[i]=p}else data.professors.unshift(p);save();document.getElementById('profFormPanel').style.display='none';showView('professors')}
+function editProfessor(id){openProfessorForm(data.professors.find(p=>p.id===id));window.scrollTo({top:500,behavior:'smooth'})}
+function deleteProfessor(id){if(confirm('确定删除这个导师及其套磁记录吗？')){data.professors=data.professors.filter(p=>p.id!==id);if(selectedEmailId===id)selectedEmailId=data.professors[0]?.id||null;save()}}
+function renderEmails(){if(!selectedEmailId)selectedEmailId=data.professors[0]?.id;document.getElementById('emailProfList').innerHTML=data.professors.map(p=>`<button class="select-item ${p.id===selectedEmailId?'selected':''}" onclick="selectedEmailId='${p.id}';renderEmails()"><strong>${esc(p.name)}</strong><small>${esc(p.school)}</small></button>`).join('')||'<div class="empty">请先添加导师。</div>';let p=data.professors.find(x=>x.id===selectedEmailId);if(!p){document.getElementById('emailEditor').innerHTML='<div class="empty">请先添加导师。</div>';return}document.getElementById('emailEditor').innerHTML=`<h2>${esc(p.name)} · 套磁信</h2><div class="form"><div class="field"><label>Subject</label><input id="eSubject" value="${esc(p.emailSubject||'')}"></div><div class="field"><label>邮件正文</label><textarea id="eBody">${esc(p.emailBody||'')}</textarea></div><div class="actions"><button class="btn primary" onclick="saveEmail()">保存草稿</button><button class="btn" onclick="copyEmail()">复制邮件</button><button class="btn" onclick="newVersion()">保存当前版本</button></div></div><h2 style="margin-top:24px">版本记录</h2><div class="version-list">${(p.versions||[]).slice().reverse().map((x,i)=>`<div class="version"><button onclick="restoreVersion(${(p.versions||[]).length-1-i})">恢复</button><strong>${esc(x.time)}</strong><div style="color:var(--muted);margin-top:4px">${esc(x.subject||'无标题')}</div></div>`).join('')||'<div class="empty">还没有版本记录。</div>'}</div>`}
+function saveEmail(){let p=data.professors.find(x=>x.id===selectedEmailId);p.emailSubject=v('eSubject');p.emailBody=v('eBody');save();alert('已保存草稿。')}
+function newVersion(){let p=data.professors.find(x=>x.id===selectedEmailId);p.emailSubject=v('eSubject');p.emailBody=v('eBody');p.versions=p.versions||[];p.versions.push({time:new Date().toLocaleString('zh-CN'),subject:p.emailSubject,body:p.emailBody});save();alert('版本已保存。')}
+function restoreVersion(i){let p=data.professors.find(x=>x.id===selectedEmailId),x=p.versions[i];if(x){p.emailSubject=x.subject;p.emailBody=x.body;save();renderEmails()}}
+function copyEmail(){let p=data.professors.find(x=>x.id===selectedEmailId);navigator.clipboard?.writeText(`Subject: ${v('eSubject')}\\n\\n${v('eBody')}`);alert('邮件已复制。')}
+function renderPublic(){let d=data;document.getElementById('publicContent').innerHTML=`<div class="public-head"><div><div class="public-title">${esc(d.profile.name)}</div><div class="public-sub">${esc(d.profile.title)}</div></div><div style="text-align:right;color:var(--muted);font-size:11px">最近更新时间<br>${esc(d.lastUpdated)}</div></div>
+<div class="public-section"><h2>Research Interests</h2><div class="tags">${d.profile.interests.map(x=>`<span class="tag">${esc(x)}</span>`).join('')}</div></div>
+<div class="public-section"><h2>Application Progress</h2><div class="stats" id="publicStats"></div></div>
+<div class="public-section"><h2>Target Faculty</h2><div class="public-grid">${d.professors.map(p=>`<div class="public-card"><h3>${esc(p.name)}</h3><div class="prof-meta">${esc(p.school)} · ${esc(p.department)}</div><div class="tags">${p.areas.split(',').map(x=>`<span class="tag">${esc(x.trim())}</span>`).join('')}</div><p><strong>Why this professor</strong><br>${esc(p.why||'待补充')}</p><p><strong>Selected Papers</strong><br>${esc(p.papers||'待补充').replaceAll('\\n','<br>')}</p><span class="status ${p.status}">${statusLabel(p.status)}</span></div>`).join('')||'<div class="empty">暂无公开内容。</div>'}</div>
+<div class="footer">Academic Outreach · Research portfolio · 最近更新时间：${esc(d.lastUpdated)}</div>`;
+let c={preparing:0,contacted:0,replied:0,meeting:0};d.professors.forEach(p=>c[p.status]=(c[p.status]||0)+1);document.getElementById('publicStats').innerHTML=[['目标导师',d.professors.length],['已发送',c.contacted],['已回复',c.replied],['Meeting',c.meeting]].map(x=>`<div class="stat"><div class="num">${x[1]}</div><div class="label">${x[0]}</div></div>`).join('')}
+function renderAll(){renderDashboard();if(document.getElementById('professors').classList.contains('active'))renderProfessors();if(document.getElementById('emails').classList.contains('active'))renderEmails();if(document.getElementById('public').classList.contains('active'))renderPublic()}
+function v(id){return document.getElementById(id)?.value||''}
+function esc(s){return String(s??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;')}
+renderAll();
+</script>
+</body>
+</html>

@@ -161,7 +161,10 @@
     </div>
   </div>
 
-<script src="config.js"></script>
+<script>
+window.SUPABASE_URL = "https://yhxdidhfvlnlqpelubxy.supabase.co";
+window.SUPABASE_ANON_KEY = "sb_publishable_mXRqi7tr5hWKPKvmKu-Rxg_Icki4Flo";
+</script>
 <script>
 const sb = supabase.createClient(window.SUPABASE_URL, window.SUPABASE_ANON_KEY);
 let currentUser=null, currentProfile=null, professors=[], emails=[];
